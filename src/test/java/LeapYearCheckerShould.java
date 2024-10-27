@@ -16,6 +16,11 @@ public class LeapYearCheckerShould {
     public void take_non_leap_years_those_divisible_by_100_but_not_by_400(int year) {
         assertThat(new LeapYearChecker().isLeapYear(year)).isFalse();
     }
+
+    @Test
+    public void take_2008_as_leap_year() {
+        assertThat(new LeapYearChecker().isLeapYear(2008)).isTrue();
+    }
 }
 
 
