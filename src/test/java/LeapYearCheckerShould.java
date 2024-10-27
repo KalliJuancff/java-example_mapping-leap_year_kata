@@ -1,3 +1,4 @@
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -20,6 +21,11 @@ public class LeapYearCheckerShould {
     @ValueSource(ints = {2008, 2012, 2016})
     public void take_leap_years_those_divisible_by_4_but_not_by_100(int year) {
         assertThat(new LeapYearChecker().isLeapYear(year)).isTrue();
+    }
+
+    @Test
+    public void take_2013_as_non_leap_year() {
+        assertThat(new LeapYearChecker().isLeapYear(2013)).isFalse();
     }
 }
 
