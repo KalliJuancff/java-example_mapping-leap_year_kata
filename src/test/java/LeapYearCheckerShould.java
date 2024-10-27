@@ -26,6 +26,11 @@ public class LeapYearCheckerShould {
     public void take_2012_as_leap_year() {
         assertThat(new LeapYearChecker().isLeapYear(2012)).isTrue();
     }
+
+    @Test
+    public void take_2016_as_leap_year() {
+        assertThat(new LeapYearChecker().isLeapYear(2016)).isTrue();
+    }
 }
 
 

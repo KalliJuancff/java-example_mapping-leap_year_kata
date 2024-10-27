@@ -1,6 +1,6 @@
 public class LeapYearChecker {
     public boolean isLeapYear(int year) {
-        if (year == 2008 || year == 2012) {
+        if (year % 100 != 0) {
             return true;
         }
 
