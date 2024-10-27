@@ -12,7 +12,7 @@ public class LeapYearCheckerShould {
     }
 
     @ParameterizedTest
-    @ValueSource(ints = {1800, 190, 2100})
+    @ValueSource(ints = {1800, 1900, 2100})
     public void take_non_leap_years_those_divisible_by_100_but_not_by_400(int year) {
         assertThat(new LeapYearChecker().isLeapYear(year)).isFalse();
     }
