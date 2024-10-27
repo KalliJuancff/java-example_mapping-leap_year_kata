@@ -1,10 +1,7 @@
 public class LeapYearChecker {
     public boolean isLeapYear(int year) {
-        if (!isDivisibleBy4(year)) {
-            return false;
-        }
-
-        return (!isDivisibleBy100(year) || isDivisibleBy400(year));
+        return ((isDivisibleBy4(year) && !isDivisibleBy100(year)) ||
+                (isDivisibleBy400(year)));
     }
 
     private static boolean isDivisibleBy4(int year) {
