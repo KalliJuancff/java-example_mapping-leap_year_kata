@@ -11,19 +11,10 @@ public class LeapYearCheckerShould {
         assertThat(new LeapYearChecker().isLeapYear(year)).isTrue();
     }
 
-    @Test
-    public void take_1800_as_non_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(1800)).isFalse();
-    }
-
-    @Test
-    public void take_1900_as_non_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(1900)).isFalse();
-    }
-
-    @Test
-    public void take_2100_as_non_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(2100)).isFalse();
+    @ParameterizedTest
+    @ValueSource(ints = {1800, 190, 2100})
+    public void take_non_leap_years_those_divisible_by_100_but_not_by_400(int year) {
+        assertThat(new LeapYearChecker().isLeapYear(year)).isFalse();
     }
 }
 
