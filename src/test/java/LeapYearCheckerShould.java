@@ -23,19 +23,10 @@ public class LeapYearCheckerShould {
         assertThat(new LeapYearChecker().isLeapYear(year)).isTrue();
     }
 
-    @Test
-    public void take_2013_as_non_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(2013)).isFalse();
-    }
-
-    @Test
-    public void take_2017_as_non_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(2017)).isFalse();
-    }
-
-    @Test
-    public void take_2025_as_non_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(2025)).isFalse();
+    @ParameterizedTest
+    @ValueSource(ints = {2013, 2017, 2025})
+    public void take_non_leap_years_those_not_divisible_by_4(int year) {
+        assertThat(new LeapYearChecker().isLeapYear(year)).isFalse();
     }
 }
 
