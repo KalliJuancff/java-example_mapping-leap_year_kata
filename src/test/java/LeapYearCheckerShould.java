@@ -1,21 +1,13 @@
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class LeapYearCheckerShould {
-    @Test
-    public void take_1600_as_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(1600)).isTrue();
-    }
-
-    @Test
-    public void take_2000_as_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(2000)).isTrue();
-    }
-
-    @Test
-    public void take_2400_as_leap_year() {
-        assertThat(new LeapYearChecker().isLeapYear(2400)).isTrue();
+    @ParameterizedTest
+    @ValueSource(ints = {1600, 2000, 2400})
+    public void take_leap_year_correctly(int year) {
+        assertThat(new LeapYearChecker().isLeapYear(year)).isTrue();
     }
 }
 
