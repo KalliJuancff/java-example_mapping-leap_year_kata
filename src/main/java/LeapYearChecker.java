@@ -8,11 +8,7 @@ public class LeapYearChecker {
             return true;
         }
 
-        if (!isDivisibleBy400(year)) {
-            return false;
-        }
-
-        return true;
+        return isDivisibleBy400(year);
     }
 
     private static boolean isDivisibleBy4(int year) {
