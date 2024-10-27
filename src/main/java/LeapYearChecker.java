@@ -5,18 +5,18 @@ public class LeapYearChecker {
     }
 
     private static boolean isDivisibleBy4(int year) {
-        return isYearDivisibleBy(year, 4);
+        return isDivisibleBy(year, 4);
     }
 
     private static boolean isDivisibleBy100(int year) {
-        return isYearDivisibleBy(year, 100);
+        return isDivisibleBy(year, 100);
     }
 
     private static boolean isDivisibleBy400(int year) {
-        return isYearDivisibleBy(year, 400);
+        return isDivisibleBy(year, 400);
     }
 
-    private static boolean isYearDivisibleBy(int year, int divisor) {
+    private static boolean isDivisibleBy(int year, int divisor) {
         return year % divisor == 0;
     }
 }
