@@ -6,7 +6,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class LeapYearCheckerShould {
     @ParameterizedTest
     @ValueSource(ints = {1600, 2000, 2400})
-    public void take_leap_year_correctly(int year) {
+    public void take_leap_year_those_divisible_by_400(int year) {
         assertThat(new LeapYearChecker().isLeapYear(year)).isTrue();
     }
 
